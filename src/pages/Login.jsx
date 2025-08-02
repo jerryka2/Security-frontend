@@ -87,41 +87,49 @@ const Login = () => {
   }, [token, isInitializing, navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-orange-50 to-pink-50 px-4 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50 flex items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-24 h-24 bg-orange-300 rounded-full opacity-30 animate-pulse-slow"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-pink-300 rounded-full opacity-30 animate-pulse-slow delay-300"></div>
+      <div className="absolute top-0 left-0 w-24 h-24 bg-green-300 rounded-full opacity-30 animate-pulse-slow"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-lime-300 rounded-full opacity-30 animate-pulse-slow delay-300"></div>
 
       <form
         onSubmit={onSubmitHandler}
-        className="w-full max-w-xl bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl p-10 space-y-8 border border-orange-100"
+        className="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] p-10 space-y-8 border border-green-100"
       >
         {/* Header */}
         <div className="text-center space-y-3">
-          <div className="w-16 h-16 mx-auto bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-full flex items-center justify-center font-bold text-2xl animate-bounce-in">
-            🎉
+          <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center text-lime-500 font-bold text-2xl animate-bounce-in">
+            ⚡️
           </div>
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600 animate-slide-in-down">
-            {state === "Sign Up" ? "Start Your Event Journey" : "Welcome to the Party"}
+          <h2 className="text-4xl font-semibold text-green-700 animate-slide-in-down">
+            {state === "Sign Up" ? "Start Your Charging Journey" : "Welcome Back to EnergiPort"}
           </h2>
-          <p className="text-gray-600 text-lg animate-fade-in-up delay-200">
-            {state === "Sign Up" ? "Create an account to plan epic events" : "Log in to manage your celebrations"}
+          <p className="text-gray-600 text-base font-medium animate-fade-in-up delay-200">
+            {state === "Sign Up" ? "Create an account to power up your EV" : "Log in to manage your charging sessions"}
           </p>
         </div>
 
         {/* Toggle Buttons */}
-        <div className="flex justify-center gap-4 bg-orange-50/50 p-2 rounded-lg shadow-sm">
+        <div className="flex justify-center gap-4 bg-green-50/50 p-2 rounded-xl shadow-sm">
           <button
             type="button"
             onClick={() => setState("Login")}
-            className={`flex-1 py-3 px-4 rounded-lg text-base font-semibold transition-all duration-300 ${state === "Login" ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white shadow-md" : "text-orange-600 bg-white/80 hover:bg-orange-100 hover:shadow-md hover:scale-105"}`}
+            className={`flex-1 py-3 px-4 rounded-xl text-base font-semibold transition-all duration-300 ${
+              state === "Login"
+                ? "bg-green-600 text-white shadow-[0_4px_12px_rgba(34,197,94,0.2)]"
+                : "text-green-600 bg-white/80 hover:bg-green-100 hover:shadow-md hover:scale-105"
+            }`}
           >
             Login
           </button>
           <button
             type="button"
             onClick={() => setState("Sign Up")}
-            className={`flex-1 py-3 px-4 rounded-lg text-base font-semibold transition-all duration-300 ${state === "Sign Up" ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white shadow-md" : "text-orange-600 bg-white/80 hover:bg-orange-100 hover:shadow-md hover:scale-105"}`}
+            className={`flex-1 py-3 px-4 rounded-xl text-base font-semibold transition-all duration-300 ${
+              state === "Sign Up"
+                ? "bg-green-600 text-white shadow-[0_4px_12px_rgba(34,197,94,0.2)]"
+                : "text-green-600 bg-white/80 hover:bg-green-100 hover:shadow-md hover:scale-105"
+            }`}
           >
             Sign Up
           </button>
@@ -136,7 +144,7 @@ const Login = () => {
               placeholder="Enter your full name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-4 rounded-lg border border-orange-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-200 hover:border-orange-300 hover:shadow-sm"
+              className="w-full p-4 rounded-xl border border-green-200/60 bg-green-50/50 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all duration-300 hover:border-lime-400 hover:shadow-sm"
               required
             />
           </div>
@@ -150,7 +158,7 @@ const Login = () => {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-4 rounded-lg border border-orange-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-200 hover:border-orange-300 hover:shadow-sm"
+            className="w-full p-4 rounded-xl border border-green-200/60 bg-green-50/50 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all duration-300 hover:border-lime-400 hover:shadow-sm"
             required
           />
         </div>
@@ -163,7 +171,7 @@ const Login = () => {
             placeholder="Enter your password"
             value={password}
             onChange={handlePasswordChange}
-            className="w-full p-4 rounded-lg border border-orange-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-200 hover:border-orange-300 hover:shadow-sm"
+            className="w-full p-4 rounded-xl border border-green-200/60 bg-green-50/50 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all duration-300 hover:border-lime-400 hover:shadow-sm"
             required
           />
 
@@ -207,7 +215,7 @@ const Login = () => {
                 {["Very Weak", "Weak", "Fair", "Good", "Strong"][passwordStrength ?? 0]}
               </div>
               {passwordFeedback.warning && (
-                <div className="text-sm text-orange-600">{passwordFeedback.warning}</div>
+                <div className="text-sm text-red-500">{passwordFeedback.warning}</div>
               )}
               {passwordFeedback.suggestions.length > 0 && (
                 <ul className="text-sm text-gray-600 list-disc pl-6">
@@ -232,7 +240,7 @@ const Login = () => {
                   setShowCaptcha((prev) => !prev);
                   setCaptchaToken("");
                 }}
-                className="h-5 w-5 text-orange-600 focus:ring-orange-400 border-orange-200 rounded"
+                className="h-5 w-5 text-green-600 focus:ring-lime-400 border-green-200 rounded"
               />
               <label htmlFor="human-check" className="text-sm font-semibold text-gray-600">
                 I'm not a robot
@@ -254,7 +262,7 @@ const Login = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-lg text-lg font-semibold hover:from-orange-700 hover:to-pink-700 hover:scale-105 transition-all duration-300 shadow-lg"
+          className="w-full py-4 bg-green-600 text-white rounded-xl text-lg font-semibold hover:bg-lime-500 hover:scale-105 transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.2)] hover:shadow-[0_6px_16px_rgba(34,197,94,0.3)]"
         >
           {state === "Sign Up" ? "Create Account" : "Login"}
         </button>
@@ -263,7 +271,7 @@ const Login = () => {
         <p className="text-center text-base text-gray-600">
           {state === "Sign Up" ? "Already have an account?" : "Don't have an account?"}{" "}
           <span
-            className="text-orange-600 font-semibold hover:text-orange-700 hover:underline cursor-pointer transition-all duration-200"
+            className="text-green-600 font-semibold hover:text-lime-500 hover:underline cursor-pointer transition-all duration-200"
             onClick={() => setState((prev) => (prev === "Sign Up" ? "Login" : "Sign Up"))}
           >
             {state === "Sign Up" ? "Login here" : "Register now"}
@@ -274,14 +282,47 @@ const Login = () => {
         {state === "Login" && (
           <p className="text-center text-base text-gray-600 mt-3">
             Forgot your password?{" "}
-            <Link to="/forgot-password" className="text-orange-600 font-semibold hover:text-orange-700 hover:underline transition-all duration-200">
+            <Link to="/forgot-password" className="text-green-600 font-semibold hover:text-lime-500 hover:underline transition-all duration-200">
               Reset it here
             </Link>
           </p>
         )}
+
+        {/* Custom Tailwind Animation Styles */}
+        <style jsx>{`
+          @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+          }
+          .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+          }
+          @keyframes bounce-in {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+          }
+          .animate-bounce-in {
+            animation: bounce-in 0.5s ease-out;
+          }
+          @keyframes slide-in-down {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-slide-in-down {
+            animation: slide-in-down 0.6s ease-out;
+          }
+          @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out;
+          }
+        `}</style>
       </form>
     </div>
   );
 };
-
+ 
 export default Login;

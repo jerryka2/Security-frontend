@@ -1,8 +1,8 @@
 import React from 'react'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
-import TopEvents from '../components/TopEvents'
-import EventTypeMenu from '../components/EventTypeMenu'
+import TopEvents from '../components/TopStations'
+import EventTypeMenu from '../components/ChargingTypeMenu'
 
 const Home = () => {
   return (
