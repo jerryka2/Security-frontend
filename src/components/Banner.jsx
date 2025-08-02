@@ -6,36 +6,50 @@ const Banner = () => {
   const navigate = useNavigate()
 
   return (
-    <div className='relative flex bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 rounded-3xl px-6 sm:px-10 md:px-14 lg:px-16 my-20 md:mx-10 overflow-hidden group'>
+    <div className="relative flex bg-green-50/50 backdrop-blur-md rounded-2xl border border-green-200/60 shadow-[0_4px_12px_rgba(34,197,94,0.15)] px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 my-12 md:mx-8 overflow-hidden">
       {/* ------- Left Side ------- */}
-      <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-20 lg:pl-6 animate-slide-in-left z-10'>
-        <div className='text-xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold text-white leading-tight tracking-wide'>
-          <p>Plan Epic Events</p>
-          <p className='mt-2'>With EventVibe’s Top Planners</p>
+      <div className="flex-1 py-4 sm:py-6 md:py-8 lg:py-10 lg:pl-4">
+        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-green-700 leading-tight animate-fade-in-left">
+          <p>Charge with Ease ⚡️</p>
+          <p className="mt-1">Using EnergiPort’s Network</p>
         </div>
+        <p className="text-sm sm:text-base text-gray-600 font-medium mt-2 animate-fade-in-left delay-100">
+          Access fast, reliable EV charging stations anytime, anywhere.
+        </p>
         <button
           onClick={() => { navigate('/login'); window.scrollTo(0, 0) }}
-          className='bg-white text-sm sm:text-base text-orange-600 font-semibold px-10 py-3 rounded-full mt-8 hover:bg-orange-50 hover:shadow-xl hover:scale-105 transition-all duration-300'
+          className="bg-green-600 text-white text-sm sm:text-base font-medium px-6 py-2.5 rounded-lg mt-4 hover:bg-lime-600 hover:shadow-[0_4px_14px_rgba(34,197,94,0.25)] hover:scale-102 transition-all duration-300"
         >
           Get Started Now
         </button>
       </div>
 
       {/* ------- Right Side (Image Centered in Banner) ------- */}
-      <div className='hidden md:block md:w-1/2 lg:w-[400px] relative'>
-        <div className='absolute inset-0 flex items-center justify-center'>
-          <div className='relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[350px] lg:h-[350px]'>
+      <div className="hidden md:block md:w-1/2 lg:w-[340px]">
+        <div className="flex items-center justify-center h-full">
+          <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px]">
             <img
-              className='w-full h-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500 ease-in-out'
+              className="w-full h-full object-cover rounded-lg border border-green-200/60 shadow-[0_2px_8px_rgba(34,197,94,0.1)] hover:scale-102 transition-transform duration-300"
               src={assets.event_banner_img || assets.appointment_img}
-              alt="Event Banner"
+              alt="Charging Banner"
             />
-            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl'></div>
-            <div className='absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full opacity-75 animate-pulse delay-100'></div>
-            <div className='absolute -bottom-4 -right-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-75 animate-pulse delay-300'></div>
           </div>
         </div>
       </div>
+
+      {/* Custom Tailwind Animation Styles */}
+      <style jsx>{`
+        @keyframes fade-in-left {
+          0% { opacity: 0; transform: translateX(-10px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        .animate-fade-in-left {
+          animation: fade-in-left 0.5s ease-out;
+        }
+        .delay-100 {
+          animation-delay: 0.1s;
+        }
+      `}</style>
     </div>
   )
 }
