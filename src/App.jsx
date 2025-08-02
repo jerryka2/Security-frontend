@@ -7,9 +7,9 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { AppContext } from "./context/AppContext";
 import About from "./pages/About";
-import Appointment from "./pages/EventBooking";
+import StationBooking from "./pages/StationBooking";
 import Contact from "./pages/Contact";
-import Doctors from "./pages/Events";
+import Doctors from "./pages/Stations";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -47,7 +47,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/appointment/:docId" element={<Appointment />} />
+          <Route path="/appointment/:docId" element={<StationBooking />} />
           <Route path="/my-appointments" element={<MyAppointments />} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/verify" element={<Verify />} />
