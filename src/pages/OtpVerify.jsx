@@ -138,22 +138,23 @@ const OtpVerify = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4 sm:p-6">
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 sm:p-10 transform transition-all duration-500 hover:scale-105">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="relative bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] max-w-lg w-full p-8 sm:p-10">
         {/* Subtle decorative gradient overlay */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-orange-400 to-amber-400 opacity-5 pointer-events-none"></div>
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-400 to-lime-400 opacity-5 pointer-events-none"></div>
 
         {/* Header Section */}
         <div className="relative text-center space-y-3">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-4xl font-semibold text-green-700 tracking-tight flex items-center justify-center gap-2 animate-slide-in-down">
+            <span className="text-2xl text-lime-500 animate-pulse">⚡️</span>
             {isLogin ? "Secure Login" : "Verify Your Email"}
           </h2>
-          <p className="text-gray-600 text-base font-medium">
+          <p className="text-gray-600 text-base font-medium animate-fade-in-up delay-100">
             {isLogin
               ? "Enter the 6-digit code sent to your email"
               : "A 6-digit code has been sent to your email"}
           </p>
-          <p className="font-semibold text-orange-600 text-lg">{email}</p>
+          <p className="font-semibold text-green-600 text-lg">{email}</p>
         </div>
 
         {/* OTP Input Form */}
@@ -168,7 +169,7 @@ const OtpVerify = () => {
                 value={digit}
                 onChange={(e) => handleOtpChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
-                className="w-14 h-14 sm:w-16 sm:h-16 text-center text-2xl font-bold text-gray-800 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none transition-all duration-300 bg-gray-50/50 hover:bg-gray-50 shadow-sm"
+                className="w-14 h-14 sm:w-16 sm:h-16 text-center text-2xl font-bold text-gray-800 border-2 border-green-200/60 rounded-xl focus:border-lime-400 focus:ring-4 focus:ring-green-100 focus:outline-none transition-all duration-300 bg-green-50/50 hover:bg-green-100 shadow-sm"
                 disabled={isLoading}
               />
             ))}
@@ -177,7 +178,7 @@ const OtpVerify = () => {
           <button
             type="submit"
             disabled={isLoading || otp.join("").length !== 6}
-            className="w-full py-3.5 bg-orange-500 text-white rounded-xl font-semibold text-lg hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 transform hover:-translate-y-1 shadow-md disabled:shadow-none"
+            className="w-full py-3.5 bg-green-600 text-white rounded-xl font-semibold text-lg hover:bg-lime-500 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.2)] hover:shadow-[0_6px_16px_rgba(34,197,94,0.3)] disabled:shadow-none flex items-center justify-center"
           >
             {isLoading ? (
               <span className="flex items-center justify-center">
@@ -216,7 +217,7 @@ const OtpVerify = () => {
           {timeLeft > 0 ? (
             <p className="text-gray-600 text-sm font-medium">
               Resend OTP in{" "}
-              <span className="font-bold text-orange-600">
+              <span className="font-bold text-green-600">
                 {formatTime(timeLeft)}
               </span>
             </p>
@@ -224,12 +225,12 @@ const OtpVerify = () => {
             <button
               onClick={handleResendOtp}
               disabled={isLoading}
-              className="text-orange-600 font-semibold text-base hover:text-orange-800 disabled:text-gray-400 transition-colors duration-300"
+              className="text-green-600 font-semibold text-base hover:text-lime-500 disabled:text-gray-400 transition-colors duration-300"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">
                   <svg
-                    className="animate-spin h-4 w-4 mr-2 text-orange-600"
+                    className="animate-spin h-4 w-4 mr-2 text-green-600"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -265,12 +266,37 @@ const OtpVerify = () => {
               : "Want to use a different email?"}{" "}
             <span
               onClick={() => navigate("/login")}
-              className="text-orange-600 font-semibold hover:text-orange-800 cursor-pointer transition-colors duration-300"
+              className="text-green-600 font-semibold hover:text-lime-500 cursor-pointer transition-colors duration-300"
             >
               {isLogin ? "Try again" : "Go back"}
             </span>
           </p>
         </div>
+
+        {/* Custom Tailwind Animation Styles */}
+        <style jsx>{`
+          @keyframes slide-in-down {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-slide-in-down {
+            animation: slide-in-down 0.6s ease-out;
+          }
+          @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out;
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+          }
+          .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+          }
+        `}</style>
       </div>
     </div>
   );
