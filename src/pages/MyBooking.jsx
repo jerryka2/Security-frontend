@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { AppContext } from '../context/AppContext';
 import { api } from '../services/apiClient';
 
-const MyEventBookings = () => {
+const MyChargingBookings = () => {
   const { backendUrl, token } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -91,37 +91,35 @@ const MyEventBookings = () => {
 
   return (
     <div className="mx-4 sm:mx-10 lg:mx-20 my-16">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 tracking-tight mb-10 text-center animate-fade-in-down">
-        My Event Bookings
+      <h2 className="text-3xl sm:text-4xl font-semibold text-green-700 tracking-tight mb-10 text-center animate-fade-in-down flex items-center justify-center gap-2">
+        <span className="text-2xl text-lime-500 animate-pulse">⚡️</span>
+        My Charging Bookings
       </h2>
       <div className="max-w-5xl mx-auto space-y-6">
         {appointments.length === 0 ? (
-          <div className="text-center text-gray-600 text-lg font-medium bg-gradient-to-br from-white to-orange-50 rounded-2xl shadow-lg p-8 animate-fade-in-up">
-            No event bookings found.
+          <div className="text-center text-gray-600 text-lg font-medium bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] p-8 animate-fade-in-up">
+            No charging bookings found.
           </div>
         ) : (
           appointments.map((item, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-white to-orange-50 rounded-3xl shadow-xl p-6 sm:flex sm:gap-8 items-center transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 animate-slide-in-up"
+              className="bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] p-6 sm:flex sm:gap-8 items-center transition-all duration-300 hover:shadow-[0_6px_20px_rgba(34,197,94,0.2)] animate-slide-in-up"
             >
-              <div className="flex-shrink-0 relative group">
+              <div className="flex-shrink-0 relative">
                 <img
-                  className="w-36 h-36 sm:w-40 sm:h-40 object-cover rounded-xl border-2 border-orange-200/60 group-hover:scale-105 transition-transform duration-400 ease-in-out"
+                  className="w-36 h-36 sm:w-40 sm:h-40 object-cover rounded-xl border-2 border-green-200/50 hover:border-lime-400 transition-all duration-300"
                   src={item.docData.image}
                   alt={item.docData.name}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-xl"></div>
-                <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full opacity-80 animate-pulse delay-100"></div>
-                <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-80 animate-pulse delay-300"></div>
               </div>
               <div className="flex-1 mt-4 sm:mt-0 text-sm text-gray-700">
-                <p className="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
+                <p className="text-xl sm:text-2xl font-semibold text-green-700">
                   {item.docData.name}
                 </p>
                 <p className="text-gray-500 font-medium italic">{item.docData.speciality}</p>
-                <p className="mt-3 text-gray-600 font-semibold">Venue:</p>
+                <p className="mt-3 text-gray-600 font-semibold">Location:</p>
                 <p className="text-gray-600">{item.docData.address.line1}</p>
                 <p className="text-gray-600">{item.docData.address.line2}</p>
                 <p className="mt-2 text-gray-600">
@@ -133,7 +131,7 @@ const MyEventBookings = () => {
                 {!item.cancelled && !item.payment && !item.isCompleted && payment !== item._id && (
                   <button
                     onClick={() => setPayment(item._id)}
-                    className="py-3 px-8 bg-gradient-to-r from-orange-400 to-pink-400 text-white rounded-full font-semibold hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl"
+                    className="py-3 px-8 bg-green-600 text-white rounded-full font-semibold border border-green-200/60 hover:bg-lime-500 transition-all duration-300"
                   >
                     Pay Online
                   </button>
@@ -142,7 +140,7 @@ const MyEventBookings = () => {
                 {!item.cancelled && !item.payment && !item.isCompleted && payment === item._id && (
                   <button
                     onClick={() => appointmentStripe(item._id)}
-                    className="py-3 px-8 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full font-semibold hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl"
+                    className="py-3 px-8 bg-green-600 text-white rounded-full font-semibold border border-green-200/60 hover:bg-lime-500 transition-all duration-300"
                   >
                     Pay with Stripe
                   </button>
@@ -155,7 +153,7 @@ const MyEventBookings = () => {
                 )}
 
                 {item.isCompleted && (
-                  <button className="py-3 px-8 bg-orange-100 text-orange-700 rounded-full font-semibold border border-orange-200 hover:bg-orange-200 transition-all duration-300">
+                  <button className="py-3 px-8 bg-green-100 text-green-700 rounded-full font-semibold border border-green-200 hover:bg-green-200 transition-all duration-300">
                     Completed
                   </button>
                 )}
@@ -163,7 +161,7 @@ const MyEventBookings = () => {
                 {!item.cancelled && !item.isCompleted && (
                   <button
                     onClick={() => cancelAppointment(item._id)}
-                    className="py-3 px-8 bg-red-100 text-red-600 rounded-full font-semibold hover:bg-red-200 hover:text-red-700 transition-all duration-300 transform hover:-translate-y-0.5"
+                    className="py-3 px-8 bg-red-100 text-red-600 rounded-full font-semibold border border-red-200 hover:bg-red-200 hover:text-red-700 transition-all duration-300"
                   >
                     Cancel
                   </button>
@@ -179,8 +177,33 @@ const MyEventBookings = () => {
           ))
         )}
       </div>
+
+      {/* Custom Tailwind Animation Styles */}
+      <style jsx>{`
+        @keyframes fade-in-down {
+          0% { opacity: 0; transform: translateY(-20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+          animation: fade-in-down 0.6s ease-out;
+        }
+        @keyframes slide-in-up {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-in-up {
+          animation: slide-in-up 0.6s ease-out;
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 1; }
+        }
+        .animate-pulse {
+          animation: pulse 2s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default MyEventBookings;
+export default MyChargingBookings;
