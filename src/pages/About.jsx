@@ -1,94 +1,142 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from 'react';
+import { assets } from '../assets/assets';
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Header Section */}
-      <div className='relative bg-gradient-to-r from-orange-500 to-pink-500 text-white py-16 overflow-hidden'>
-        <div className='absolute inset-0 bg-white/10 backdrop-blur-sm z-0'></div>
-        <div className='relative max-w-6xl mx-auto px-6 text-center z-10'>
-          <h1 className='text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-200 mb-4 animate-fade-in-down'>
-            About EventVibe
+      <div className="relative bg-gradient-to-r from-green-900 to-teal-700 py-14 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-15 z-0"></div>
+        <div className="relative max-w-4xl mx-auto px-4 text-center z-10">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white flex items-center justify-center gap-3">
+            <span className="text-2xl sm:text-3xl text-lime-300 animate-pulse">⚡️</span>
+            Our EV Charging Network
           </h1>
-          <div className='w-24 h-1 bg-orange-300 mx-auto rounded-full animate-scale-in'></div>
+          <p className="mt-3 text-base sm:text-lg font-medium text-gray-100 leading-relaxed max-w-xl mx-auto">
+            Leading the charge with innovative, sustainable EV charging solutions.
+          </p>
+          <div className="w-16 h-1 bg-lime-300 mx-auto rounded-full mt-3 animate-scale-in"></div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className='max-w-6xl mx-auto px-6 py-16'>
+      <div className="max-w-4xl mx-auto px-4 py-14">
         {/* About Section */}
-        <div className='grid lg:grid-cols-2 gap-12 items-center mb-20'>
-          <div className='relative'>
-            <img
-              className='w-full max-w-md h-auto rounded-2xl shadow-xl border-4 border-orange-100 transform hover:scale-105 transition-transform duration-500 ease-in-out'
-              src={assets.about_image}
-              alt="EventVibe Showcase"
-            />
-            <div className='absolute -bottom-4 -right-4 w-20 h-20 bg-orange-200 rounded-full opacity-60 animate-pulse'></div>
-          </div>
-
-          <div className='space-y-8'>
-            <div className='space-y-4 text-gray-800 leading-relaxed'>
-              <p className='text-lg md:text-xl font-medium animate-fade-in-up'>
-                Welcome to EventVibe, your go-to for creating unforgettable events with ease! We know planning can be overwhelming, so we connect you with top organizers to make every moment sparkle.
-              </p>
-              <p className='text-lg md:text-xl font-medium animate-fade-in-up delay-200'>
-                At EventVibe, we’re all about bringing joy to event planning. Our platform is packed with tools and expertise to turn your ideas into reality, stress-free and fun!
-              </p>
+        <div className="relative mb-12">
+          <div className="grid md:grid-cols-5 gap-6 items-start">
+            <div className="md:col-span-3 relative z-10">
+              <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-green-600 animate-slide-in">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
+                <p className="text-base sm:text-lg font-medium text-gray-700 leading-relaxed mb-4">
+                  Our EV Charging Network is transforming the way electric vehicles are powered, offering fast, reliable, and eco-friendly charging across the nation.
+                </p>
+                <p className="text-base sm:text-lg font-medium text-gray-700 leading-relaxed">
+                  With state-of-the-art technology and a commitment to renewable energy, we ensure every charge supports a sustainable future.
+                </p>
+              </div>
             </div>
-
-            <div className='bg-orange-50 rounded-xl p-6 border-l-4 border-orange-400 shadow-md animate-slide-in-right'>
-              <h3 className='text-xl font-semibold text-gray-800 mb-3'>Our Vision</h3>
-              <p className='text-gray-700 leading-relaxed'>
-                We envision a world where every event is a masterpiece. EventVibe makes planning seamless, connecting you with pros to craft celebrations that shine.
-              </p>
+            <div className="md:col-span-2 relative">
+              <div className="relative">
+                <img
+                  className="w-full h-auto rounded-xl shadow-lg border border-green-200/30"
+                  src={assets.about_image}
+                  alt="EV Charging Network"
+                />
+                <div className="absolute inset-0 border-4 border-lime-300/30 rounded-xl -z-10 transform -translate-x-3 translate-y-3"></div>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Mission Section */}
+        <div className="bg-green-50 rounded-xl p-6 shadow-md border-l-4 border-green-600 mb-12 animate-slide-in delay-200">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3">Our Mission</h3>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            To empower drivers with a seamless, green, and accessible EV charging experience, paving the way for a cleaner tomorrow.
+          </p>
         </div>
 
         {/* Why Choose Us Section */}
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-800 mb-4 animate-fade-in-down'>
-            Why Choose EventVibe
+        <div className="text-center mb-10">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 animate-slide-in">
+            Why Choose Our Network
           </h2>
-          <div className='w-20 h-1 bg-orange-400 mx-auto rounded-full animate-scale-in'></div>
+          <div className="w-12 h-1 bg-green-600 mx-auto rounded-full animate-scale-in"></div>
         </div>
 
-        <div className='grid md:grid-cols-3 gap-8'>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
             {
-              title: "Quick Planning",
-              description: "Easily plan events that fit your schedule and style.",
-              icon: "🎉"
+              title: 'High-Speed Charging',
+              description: 'Power up quickly with our cutting-edge, ultra-fast stations.',
+              icon: '⚡',
             },
             {
-              title: "Top Organizers",
-              description: "Work with the best event planners in your area.",
-              icon: "⭐"
+              title: 'Eco-Friendly Energy',
+              description: 'Charge sustainably with renewable energy sources.',
+              icon: '🌿',
             },
             {
-              title: "Custom Vibes",
-              description: "Personalized ideas to make your event truly unique.",
-              icon: "✨"
-            }
+              title: 'Nationwide Coverage',
+              description: 'Access our stations anywhere, anytime.',
+              icon: '🗺️',
+            },
           ].map((feature, index) => (
             <div
               key={index}
-              className='bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100 hover:border-orange-300 hover:scale-105 group'
+              className="bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-green-100 group"
             >
-              <div className='text-4xl mb-4 text-orange-500'>{feature.icon}</div>
-              <h3 className='text-xl font-semibold text-gray-800 mb-4'>{feature.title}</h3>
-              <p className='text-gray-600 leading-relaxed'>{feature.description}</p>
-              <div className='mt-4 w-full h-1 bg-orange-100 rounded-full'>
-                <div className='h-1 bg-orange-400 rounded-full w-1/2 transition-all duration-500 group-hover:w-full'></div>
+              <div className="text-3xl mb-3 text-green-600">{feature.icon}</div>
+              <h3 className="text-base font-semibold text-gray-800 mb-2">{feature.title}</h3>
+              <p className="text-gray-600 text-xs leading-relaxed">{feature.description}</p>
+              <div className="mt-3 w-full h-0.5 bg-green-100 rounded-full">
+                <div className="h-0.5 bg-green-600 rounded-full w-1/3 transition-all duration-300 group-hover:w-full"></div>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
-  )
-}
 
-export default About
+      {/* Custom Tailwind Animation Styles */}
+      <style jsx>{`
+        @keyframes slide-in {
+          0% {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-in {
+          animation: slide-in 0.5s ease-out;
+        }
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        .animate-pulse {
+          animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes scale-in {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+        .animate-scale-in {
+          animation: scale-in 0.5s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default About;

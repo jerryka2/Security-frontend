@@ -36,10 +36,10 @@ const ForgotPassword = () => {
 
   if (emailSent) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4 sm:p-6">
-        <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 sm:p-10 transform transition-all duration-500 hover:scale-105">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50 flex items-center justify-center p-4 sm:p-6">
+        <div className="relative bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] max-w-lg w-full p-8 sm:p-10">
           {/* Subtle decorative gradient overlay */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-orange-400 to-amber-400 opacity-5 pointer-events-none"></div>
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-400 to-lime-400 opacity-5 pointer-events-none"></div>
 
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -47,9 +47,9 @@ const ForgotPassword = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
-            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Check Your Email</h2>
+            <h2 className="text-4xl font-semibold text-green-700 tracking-tight">Check Your Email</h2>
             <p className="text-gray-600 text-base font-medium">
-              We've sent a password reset link to <span className="font-semibold text-orange-600">{email}</span>
+              We've sent a password reset link to <span className="font-semibold text-green-600">{email}</span>
             </p>
             <p className="text-sm text-gray-600">
               Didn't receive the email? Check your spam folder or try again.
@@ -60,13 +60,13 @@ const ForgotPassword = () => {
                   setEmailSent(false);
                   setEmail('');
                 }}
-                className="w-full py-3.5 bg-orange-500 text-white rounded-xl font-semibold text-lg hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 transform hover:-translate-y-1 shadow-md"
+                className="w-full py-3.5 bg-green-600 text-white rounded-xl font-semibold text-lg hover:bg-lime-500 transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.2)] hover:shadow-[0_6px_16px_rgba(34,197,94,0.3)]"
               >
                 Try Different Email
               </button>
               <Link
                 to="/login"
-                className="block w-full py-3.5 bg-gray-100 text-gray-700 rounded-xl font-semibold text-lg hover:bg-gray-200 transition-all duration-300 text-center"
+                className="block w-full py-3.5 bg-green-50 text-green-700 rounded-xl font-semibold text-lg hover:bg-green-100 transition-all duration-300 text-center"
               >
                 Back to Login
               </Link>
@@ -78,13 +78,16 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4 sm:p-6">
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 sm:p-10 transform transition-all duration-500 hover:scale-105">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-lime-50 to-emerald-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="relative bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_4px_16px_rgba(34,197,94,0.1)] max-w-lg w-full p-8 sm:p-10">
         {/* Subtle decorative gradient overlay */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-orange-400 to-amber-400 opacity-5 pointer-events-none"></div>
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-green-400 to-lime-400 opacity-5 pointer-events-none"></div>
 
         <div className="text-center space-y-4">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Forgot Password?</h2>
+          <h2 className="text-4xl font-semibold text-green-700 tracking-tight flex items-center justify-center gap-2">
+            <span className="text-2xl text-lime-500 animate-pulse">⚡️</span>
+            Forgot Password?
+          </h2>
           <p className="text-gray-600 text-base font-medium">
             Enter your email address to receive a password reset link.
           </p>
@@ -101,7 +104,7 @@ const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="w-full px-4 py-3 text-gray-800 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none transition-all duration-300 bg-gray-50/50 shadow-sm"
+              className="w-full px-4 py-3 text-gray-800 border-2 border-green-200/60 rounded-xl focus:border-lime-400 focus:ring-4 focus:ring-green-100 focus:outline-none transition-all duration-300 bg-green-50/50 shadow-sm"
               required
             />
           </div>
@@ -109,7 +112,7 @@ const ForgotPassword = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3.5 bg-orange-500 text-white rounded-xl font-semibold text-lg hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 transform hover:-translate-y-1 shadow-md flex items-center justify-center"
+            className="w-full py-3.5 bg-green-600 text-white rounded-xl font-semibold text-lg hover:bg-lime-500 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 shadow-[0_4px_12px_rgba(34,197,94,0.2)] hover:shadow-[0_6px_16px_rgba(34,197,94,0.3)] flex items-center justify-center"
           >
             {isLoading ? (
               <>
@@ -128,7 +131,7 @@ const ForgotPassword = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600 font-medium">
             Remember your password?{' '}
-            <Link to="/login" className="text-orange-600 font-semibold hover:text-orange-800 transition-colors duration-300">
+            <Link to="/login" className="text-green-600 font-semibold hover:text-lime-500 transition-colors duration-300">
               Back to Login
             </Link>
           </p>
