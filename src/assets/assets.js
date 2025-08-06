@@ -1,4 +1,4 @@
-import about_image from './corporate-events.png'
+import about_image from './about_image.png'
 import appointment_img from './appointment_img.png'
 import arrow_icon from './arrow_icon.svg'
 import chats_icon from './chats_icon.svg'
