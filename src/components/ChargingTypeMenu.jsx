@@ -4,9 +4,9 @@ import { assets } from '../assets/assets';
 
 const ChargingTypeMenu = () => {
   const chargingTypes = [
-    { type: 'Fast Charging', image: assets.fast_charging_img },
-    { type: 'Standard Charging', image: assets.standard_charging_img },
-    { type: 'Solar Charging', image: assets.solar_charging_img },
+    { type: 'Fast Charging', image: assets.appointment_img },
+    { type: 'Standard Charging', image: assets.contact_image },
+    { type: 'Solar Charging', image: assets.about_image },
   ];
 
   return (
